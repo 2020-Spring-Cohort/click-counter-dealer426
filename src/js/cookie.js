@@ -11,7 +11,6 @@ class Cookie {
         this._clicker = 0;  
     }
 
-
     getCookieCount() {   
         return this._clicker;
     }
