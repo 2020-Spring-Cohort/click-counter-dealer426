@@ -11,6 +11,8 @@ describe('Is JS Working', function(){
     describe('DOM element', function(){
         beforeEach(function(){
             counterButton = document.querySelector('#counterButton');
+            fizzBuzzNumber = document.querySelector('#fizzbuzz-number');
+            fizzBuzzValue = document.querySelector('#fizzbuzz-value');
         })
 
         describe('button', function(){
