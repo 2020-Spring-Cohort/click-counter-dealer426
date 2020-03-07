@@ -8,6 +8,7 @@ describe('app.js manipulates the DOM to reflect the status of a Cookie object.',
         testClickUpdater = document.createElement('div');
         testIncreaseClick = document.createElement('button');
         makeCookieClickerButton(testIncreaseClick, testClickUpdater, testCookie);
+        resetClicker(testIncreaseClick, testClickUpdater, testCookie);
     });
 
     describe('updateClicker() - As the user clicks, the innerText of the passed element reflects the click count.', () => {
@@ -23,9 +24,12 @@ describe('app.js manipulates the DOM to reflect the status of a Cookie object.',
         });
     });
 
-    describe('updateSpeedometer() - As the car brakes, the innerText of the passed element reflects the cars speed.', () => {
-        it('Braking to 10 should show a speed of 10.', () => {
-            
+    describe('resetClicker() -  resets clicker to 0.', () => {
+        it('clicking reset should set the clicker back to 0.', () => {
+            testCookie.cookieCounter();
+            testCookie.cookieReset();
+            resetClicker(testIncreaseClick, testClickUpdater, testCookie); 
+            expect(testCookie.getCookieCount()).toBe(0);
         });
     });
 
