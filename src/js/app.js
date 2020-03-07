@@ -10,7 +10,7 @@ const makeCookieClickerButton = (buttonClickElement, dashboardElement, cookieObj
   buttonClickElement.addEventListener('click', ()=>{
       cookieObject.cookieCounter();
       updateClicker(dashboardElement, cookieObject);
-      makeCookieCompanionClicker(cookieObject);
+      makeCookieCountCheckerToSeeWhatButtonsGetEnabled(cookieObject);
   })
 }
 
@@ -21,14 +21,18 @@ const resetClicker = (buttonClickElement, dashboardElement, cookieObject) => {
   })
 }
 
-const makeCookieCompanionClicker = (cookieObject) => {
-    if(cookieObject.getCookieCount() === 10)
+const makeCookieCountCheckerToSeeWhatButtonsGetEnabled = (cookieObject) => {
+    
+  if(cookieObject.getCookieCount() === 10)
     {
-      alert('You reached 10 clicks!');
-      buttonCookieCompanionClicker.classList.remove('hide');
-      buttonCookieCompanionClicker.classList.add('show');
       buttonCookieCollectiveCulminatioCompounder.classList.remove('hide');
       buttonCookieCollectiveCulminatioCompounder.classList.add('show');
+    }
+
+    if(cookieObject.getCookieCount() === 100)
+    {
+      buttonCookieCompanionClicker.classList.remove('hide');
+      buttonCookieCompanionClicker.classList.add('show');
     }
 }
 
