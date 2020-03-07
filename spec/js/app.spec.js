@@ -33,17 +33,24 @@ describe('app.js manipulates the DOM to reflect the status of a Cookie object.',
         });
     });
 
-    describe('makeAcceleratorButton() - Creates an accelerator button out of the passed button, calls accelerate() one time when clicked.', () => {
-        it('Clicking once on the new accelerator will increase the car\'s speed.', () => {
-            testIncreaseClick.click();
-            expect(testCookie.getSpeed()).toBe(10);
+    describe('getCookieCount - Holds the current state of all of the user clicks.', () => {
+        it('Clicking thrice should return 3 clicks.', () => {
+            testCookie.cookieCounter();
+            testCookie.cookieCounter();
+            testCookie.cookieCounter();
+            expect(testCookie.getCookieCount()).toBe(3);
         });
 
-        it('Clicking once on the accelerator will increase the speedometer elements innerText to \'10\'.', () => {
-            testIncreaseClick.click();
-            expect(testClickUpdater.innerText).toBe('10');
+        it('Clicking four times should return 4 clicks.', () => {
+            testCookie.cookieCounter();
+            testCookie.cookieCounter();
+            testCookie.cookieCounter();
+            testCookie.cookieCounter();
+            expect(testCookie.getCookieCount()).toBe(4);
         });
     });
+
+
     describe('updateCheckEngineLight() - Changes the text and color of the passed element.', () => {
         beforeEach(() => {
             
