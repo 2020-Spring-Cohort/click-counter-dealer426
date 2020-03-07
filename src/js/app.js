@@ -33,8 +33,24 @@ const makeCookieCountCheckerToSeeWhatButtonsGetEnabled = (cookieObject) => {
     {
       buttonCookieCompanionClicker.classList.remove('hide');
       buttonCookieCompanionClicker.classList.add('show');
+      buttonCookieCompanionClicker.addEventListener('click', ()=>{
+        
+        cookieObject.addCompanion(100);
+        alert(cookieObject.getCookieCount());
+        updateClicker(dashboardElement, cookieObject);
+
+      })
+      
     }
 }
+
+
+const buttonCookieCompanionClickerMutliplier = (cookieObject) =>{
+        const companion = 100;
+        cookieObject.getCookieCount() += companion;
+        alert(cookieObject.getCookieCount);
+}
+
 
 
 const myCookie = new Cookie();

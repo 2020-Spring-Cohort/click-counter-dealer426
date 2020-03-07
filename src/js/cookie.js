@@ -1,6 +1,6 @@
 class Cookie {
     constructor() {
-        this._clicker = 0;
+        this._clicker = 98;
     }
 
     cookieCounter() {   
@@ -13,5 +13,10 @@ class Cookie {
 
     getCookieCount() {   
         return this._clicker;
+    }
+
+    addCompanion(amount) {
+
+        this._clicker += amount;
     }
 }
